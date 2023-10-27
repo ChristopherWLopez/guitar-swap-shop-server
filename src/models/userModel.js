@@ -1,20 +1,20 @@
-const { Sequelize, Model, DataTypes } = require('sequelize');
+// const { Sequelize, Model, DataTypes } = require('sequelize');
 
-const sequelize = new Sequelize('sqlite::memory:');
+// const sequelize = new Sequelize('sqlite::memory:');
 
-const user = sequelize.define( 'User', {
-    userName: DataTypes.STRING,
-    birthday: DataTypes.DATE,
-});
+// const user = sequelize.define( 'User', {
+//     userName: DataTypes.STRING,
+//     birthday: DataTypes.DATE,
+// });
 
-async function makeUser(sequelize){
-    return sequelize.define('user', {
-        user
-    })
-}
+// async function makeUser(sequelize){
+//     return sequelize.define('user', {
+//         user
+//     })
+// }
 
-// main();
+// // main();
 
-module.exports = {
-    user,
-}
+// module.exports = {
+//     user,
+// }
