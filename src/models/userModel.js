@@ -13,7 +13,7 @@ async function makeUser(sequelize){
     })
 }
 
-main();
+// main();
 
 module.exports = {
     user,
