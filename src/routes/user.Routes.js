@@ -53,4 +53,30 @@ async function createUser(req,res){
         username,
         birthday,
     });
+
 }
+
+async function updateUser(req, res, next){
+    const id = req.params.id;
+    let user = await User.findOne({ where: { id: id } });
+    if(user==null){
+        next();
+    }else{
+        const username = req.body.username ?? user.username;
+        const birthday = Date.parse(
+            req.body.birthday ?? user.birthday.isISOString()
+        );
+        let updatedUser = {
+            username,
+            birthday,
+        };
+
+        user = await update( updatedUser );
+
+        req.json(user);
+    }
+}
+
+module.exports = {
+    userRoutes,
+};
